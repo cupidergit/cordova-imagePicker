@@ -49,13 +49,12 @@
 {
     BOOL shouldSelect = previousCount < self.maximumImagesCount;
     if (!shouldSelect) {
-        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"最多%d张照片", nil), self.maximumImagesCount];
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"你一次最多只能选择%d张图片。", nil), self.maximumImagesCount];
-        [[[UIAlertView alloc] initWithTitle:title
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"你最多只能选择%d张照片。", nil), self.maximumImagesCount];
+        [[[UIAlertView alloc] initWithTitle:nil
                                     message:message
                                    delegate:nil
                           cancelButtonTitle:nil
-                          otherButtonTitles:NSLocalizedString(@"确定", nil), nil] show];
+                          otherButtonTitles:NSLocalizedString(@"我知道了", nil), nil] show];
     }
     return shouldSelect;
 }
